@@ -1,0 +1,320 @@
+[22-Jun-2024 09:47:23 UTC] PHP Warning:  require(/home/digma/sobari.id/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/digma/sobari.id/public/index.php on line 34
+[22-Jun-2024 09:47:23 UTC] PHP Fatal error:  require(): Failed opening required '/home/digma/sobari.id/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/digma/sobari.id/public/index.php on line 34
+[28-Jun-2024 11:11:42 UTC] PHP Warning:  require(/home/digma/sobari.id/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/digma/sobari.id/public/index.php on line 34
+[28-Jun-2024 11:11:42 UTC] PHP Fatal error:  require(): Failed opening required '/home/digma/sobari.id/public/../vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/digma/sobari.id/public/index.php on line 34
+[28-Jun-2024 11:11:49 UTC] PHP Warning:  require(/home/digma/sobari.id/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/digma/sobari.id/public/index.php on line 34
+[28-Jun-2024 11:11:49 UTC] PHP Fatal error:  require(): Failed opening required '/home/digma/sobari.id/public/../vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/digma/sobari.id/public/index.php on line 34
+[29-Jun-2024 03:25:05 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:25:20 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:09 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:11 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:12 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:13 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:14 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:15 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:23 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:47 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:48 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:35:48 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:36:06 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:38:04 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:38:05 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:38:50 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:38:51 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:38:53 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:39:07 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:39:08 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:39:22 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:39:22 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:39:24 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:40:20 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:40:21 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:42:32 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:42:33 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 03:44:40 UTC] PHP Fatal error:  Uncaught Error: Interface 'JsonSerializable' not found in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php:11
+Stack trace:
+#0 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include()
+#1 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#3 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(12): spl_autoload_call('Illuminate\\Supp...')
+#4 /home/digma/sobari.id/vendor/composer/ClassLoader.php(576): include('/home/digma/sob...')
+#5 /home/digma/sobari.id/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/digma/sob...')
+#6 [internal function]: Composer\Autoload\ClassLoader->loadClass('Illuminate\\Supp...')
+#7 /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): spl_autoload_call('Illuminate\\Supp...')
+#8 /home/digma/sobar in /home/digma/sobari.id/vendor/laravel/framework/src/Illuminate/Collections/Enumerable.php on line 11
+[29-Jun-2024 10:55:11 UTC] PHP Warning:  require(/home/digma/sobari.id/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/digma/sobari.id/public/index.php on line 34
+[29-Jun-2024 10:55:11 UTC] PHP Fatal error:  require(): Failed opening required '/home/digma/sobari.id/public/../vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/digma/sobari.id/public/index.php on line 34
+[29-Jun-2024 10:55:27 UTC] PHP Warning:  require(/home/digma/sobari.id/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/digma/sobari.id/public/index.php on line 34
+[29-Jun-2024 10:55:27 UTC] PHP Fatal error:  require(): Failed opening required '/home/digma/sobari.id/public/../vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/digma/sobari.id/public/index.php on line 34
+[29-Jul-2024 01:20:04 UTC] PHP Warning:  require(/home/ayogo/bkpp.ayogo.id/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/ayogo/bkpp.ayogo.id/public/index.php on line 34
+[29-Jul-2024 01:20:04 UTC] PHP Fatal error:  require(): Failed opening required '/home/ayogo/bkpp.ayogo.id/public/../vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ayogo/bkpp.ayogo.id/public/index.php on line 34
