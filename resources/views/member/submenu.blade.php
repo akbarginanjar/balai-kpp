@@ -119,6 +119,10 @@
                     <div class="col">
                         <x-kontak></x-kontak>
                     </div>
+                @elseif ($submenu->konten->halaman->atas_kiri == 'Kalender Widget')
+                    <div class="col-lg-4">
+                        <x-kalender-widget></x-kalender-widget>
+                    </div>
                 @endif
 
                 @php
@@ -203,7 +207,7 @@
                         <x-kontak></x-kontak>
                     </div>
                 @elseif ($submenu->konten->halaman->atas_kanan == 'Kalender Widget')
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <x-kalender-widget></x-kalender-widget>
                     </div>
                 @endif

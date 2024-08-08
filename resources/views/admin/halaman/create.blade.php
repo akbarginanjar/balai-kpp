@@ -108,6 +108,10 @@
                                     <option value="Kontak" {{ old('atas_kiri') == 'Kontak' ? 'selected' : '' }}>
                                         Kontak
                                     </option>
+                                    <option value="Kalender Widget"
+                                        {{ old('atas_kiri') == 'Kalender Widget' ? 'selected' : '' }}>
+                                        Kalender Widget
+                                    </option>
                                     {{-- <option value="Artikel" {{ old('atas_kiri') == 'Artikel' ? 'selected' : '' }}>
                                         Artikel
                                     </option> --}}

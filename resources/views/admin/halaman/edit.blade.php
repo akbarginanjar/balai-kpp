@@ -127,6 +127,10 @@
                                     <option value="Kontak" {{ $halaman->atas_kiri == 'Kontak' ? 'selected' : '' }}>
                                         Kontak
                                     </option>
+                                    <option value="Kalender Widget"
+                                        {{ $halaman->atas_kiri == 'Kalender Widget' ? 'selected' : '' }}>
+                                        Kalender Widget
+                                    </option>
                                     {{-- <option value="Artikel" {{ $halaman->atas_kiri == 'Artikel' ? 'selected' : '' }}>
                                         Artikel
                                     </option> --}}

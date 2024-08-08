@@ -89,6 +89,10 @@
                     <div class="col">
                         <x-artikel></x-artikel>
                     </div>
+                @elseif ($menu->konten->halaman->atas_kiri == 'Kalender Widget')
+                    <div class="col-lg-4">
+                        <x-kalender-widget></x-kalender-widget>
+                    </div>
                 @endif
 
                 @php
@@ -217,7 +221,7 @@
                         <x-artikel></x-artikel>
                     </div>
                 @elseif ($menu->konten->halaman->atas_kanan == 'Kalender Widget')
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <x-kalender-widget></x-kalender-widget>
                     </div>
                 @endif

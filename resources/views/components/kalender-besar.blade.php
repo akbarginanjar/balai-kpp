@@ -35,19 +35,19 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-8">
-                            <h3 class="mt-3"><b>2023</b></h3>
+                            {{-- <h3 class="mt-3"><b>2023</b></h3> --}}
                         </div>
                         <div class="col-md-4">
                             <div style="font-size: 12px;">Pilih Tahun</div>
-                            <form action="/s=>{{ $submenu->slug }}" method="POST">
+                            <form action="#" method="POST">
                                 <table style="width: 100%">
                                     <tr>
                                         <td>
                                             @csrf
                                             <select name="year" class="form-select " style="width: 100%">
                                                 <option value="">-- pilih tahun --</option>
-                                                <option value="2022">2022</option>
-                                                <option value="2023">2023</option>
+                                                {{-- <option value="2022">2022</option>
+                                                <option value="2023">2023</option> --}}
                                                 <option value="2024">2024</option>
                                             </select>
                                         </td>

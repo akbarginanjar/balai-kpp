@@ -22,6 +22,13 @@
         use App\Models\Tb_video;
         use Illuminate\Support\Carbon;
         use App\Models\Tb_setting;
+        use App\Models\KalenderKegiatan;
+
+        $kalender = KalenderKegiatan::orderBy('created_at', 'asc')->get();
+        if (isset($request->year)) {
+            $year = $request->input('year');
+            $kalender = KalenderKegiatan::whereYear('waktu_kegiatan', $year)->get();
+        }
         $setting = Tb_setting::find(1);
         $tentang = Tb_tentang::find(1);
         $keuntungan = Tb_keuntungan::find(1);
@@ -170,6 +177,27 @@
         .gradient-btn:hover {
             background: linear-gradient(45deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%);
         }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            bottom: 70px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .whatsapp-icon {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
     </style>
     @php
         use Illuminate\Support\Str;
@@ -179,7 +207,8 @@
         <div class="carousel-inner">
             @foreach ($slide as $key => $item)
                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                    <img src="{{ $item->gambar() }}" class="d-block w-100" alt="...">
+                    <img src="{{ $item->gambar() }}" class="" style="width: 100%; height: 400px; object-fit: cover;"
+                        alt="...">
                     <div class="overlay"></div>
                     <div class="carousel-caption d-none d-md-block">
                         <h3>{{ $item->deskripsi }}</h3>
@@ -202,7 +231,7 @@
 
 
         <div>
-            <h5 class="text-center text--primary mb-4 mt-5">Layanan yang banyak diakses</h5>
+            <h5 class="text-center text--primary mb-4 mt-4">Layanan yang banyak diakses</h5>
             <center style=" background: rgba(245, 245, 245, 0.583);">
                 <div class="container">
                     <div class="category-container">
@@ -302,7 +331,119 @@
             </div>
         </div>
 
-        <div style="background: white;" class="mt-5">
+        <style>
+            td {
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            .select-date {
+                background: rgb(255, 191, 0);
+                border-radius: 30px;
+                text-align: center;
+                padding: 10px;
+                font-weight: bold;
+            }
+
+            .sudah-terlaksana {
+                border-radius: 5px;
+                color: white;
+                background: rgb(18, 44, 147);
+                padding: 10px;
+            }
+        </style>
+        <section id="recent-blog-posts" class="recent-blog-posts">
+            <div class="container" data-aos="fade-up">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-8">
+                                {{-- <h3 class="mt-3"><b>2023</b></h3> --}}
+                            </div>
+                            <div class="col-md-4">
+                                <div style="font-size: 12px;">Pilih Tahun</div>
+                                <form action="#" method="POST">
+                                    <table style="width: 100%">
+                                        <tr>
+                                            <td>
+                                                @csrf
+                                                <select name="year" class="form-select " style="width: 100%">
+                                                    <option value="">-- pilih tahun --</option>
+                                                    {{-- <option value="2022">2022</option>
+                                                    <option value="2023">2023</option> --}}
+                                                    <option value="2024">2024</option>
+                                                </select>
+                                            </td>
+                                            <td></td>
+                                            <td><button type="submit" class="btn btn-primary btn-sm">Cari</button></td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" class="text-center">Nama Kegiatan</th>
+                                        <th colspan="12" class="text-center">Pelaksanaan</th>
+                                        <th rowspan="2" class="text-center">Tanggal</th>
+                                        <th rowspan="2" class="text-center">Waktu</th>
+                                        <th rowspan="2" class="text-center">Status</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Jan</th>
+                                        <th>Feb</th>
+                                        <th>Mar</th>
+                                        <th>Apr</th>
+                                        <th>Mei</th>
+                                        <th>Jun</th>
+                                        <th>Jul</th>
+                                        <th>Ags</th>
+                                        <th>Sep</th>
+                                        <th>Okt</th>
+                                        <th>Nov</th>
+                                        <th>Des</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($kalender as $item)
+                                        @php
+                                            $bulan = \Carbon\Carbon::parse($item->waktu_kegiatan)->format('n'); // Mendapatkan bulan (1-12)
+                                            $tanggal = \Carbon\Carbon::parse($item->waktu_kegiatan)->format('d'); // Mendapatkan tanggal (01-31)
+                                        @endphp
+                                        <tr>
+                                            <td>{{ $item->nama_kegiatan }}</td>
+                                            @for ($i = 1; $i <= 12; $i++)
+                                                <td class="text-center">
+                                                    @if ($i == $bulan)
+                                                        <div class="select-date">{{ $tanggal }}</div>
+                                                    @endif
+                                                </td>
+                                            @endfor
+                                            <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('Y-m-d') }}
+                                            </td>
+                                            <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('H:i') }}
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="{{ $item->status == 0 ? 'btn btn-secondary btn-sm' : 'btn btn-primary btn-sm' }}">
+                                                    {{ $item->status == 1 ? 'Sudah Terlaksana' : 'Belum Terlaksana' }}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{-- <div style="background: white;" class="mt-5">
             <div class="">
                 <div class="container">
                     <h3 class=" text--primary" style=""><b>Video</b></h3>
@@ -325,7 +466,13 @@
                 </div>
                 <br>
             </div>
-        </div>
+        </div> --}}
+
+        <a href="https://wa.me/{{ $setting->call_us }}" class="whatsapp-float" target="_blank">
+            <div class="whatsapp-icon">
+                <i class="bi bi-whatsapp"></i>
+            </div>
+        </a>
 
         <script>
             function scrollGalleryLeft() {

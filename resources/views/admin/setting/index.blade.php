@@ -216,7 +216,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>TikTok</label>
+                                            <label>Twitter</label>
                                             <div class="input-group ">
                                                 <input type="text" value="{{ $setting->twitter }}"
                                                     placeholder="Masukkan twitter" name="twitter" autocomplete='off'
