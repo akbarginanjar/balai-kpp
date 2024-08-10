@@ -88,6 +88,8 @@
                                         <form action="/master-admin/forum/delete/{{ $item->id }}" method="post">
                                             @method('delete')
                                             @csrf
+                                            <a href="/master-admin/forum/sub-forum/{{ $item->id }}"
+                                                class="btn btn-primary btn-sm">Lihat Balasan</a>
                                             <button type="submit" class="btn btn-danger btn-sm delete-confirm"><i
                                                     class="fa-solid fa-trash" data-toggle="tooltip" data-placement="top"
                                                     title="Hapus"></i></button>

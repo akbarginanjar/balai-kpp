@@ -182,6 +182,10 @@ Route::group(
 
         Route::resource('kalender-kegiatan', KalenderKegiatanController::class);
 
+        Route::get('/forum/sub-forum/{id}', [SubForumController::class,'index_master_admin']);
+        Route::delete('/sub_forum/delete/{id}', [SubForumController::class,'destroy']);
+        
+
         Route::get('forum', [ForumController::class,'index_master_admin']);
         Route::delete('forum/delete/{id}', [ForumController::class,'destroy']);
         Route::get('forum/publish/{id}',[ForumController::class, 'publish']);

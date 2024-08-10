@@ -55,29 +55,35 @@
                         <div class="row">
                             <div class="col">
                                 <h6><b>Share</b></h6>
-                                <a href="https://api.whatsapp.com/send?text={{ $url }}" class="btn"
-                                    style="background: rgb(13, 187, 13);" target="_blank">
+                                <a href="javascript:void(0);" class="btn" style="background: rgb(13, 187, 13);"
+                                    target="_blank" data-bs-toggle="modal" data-bs-target="#shareModal">
                                     <i class="bi bi-whatsapp text-white" style="font-size: 18px;"></i>
                                 </a>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" target="_blank"
-                                    class="btn" style="background: rgb(83, 83, 175);">
+
+                                <a href="javascript:void(0);" class="btn" style="background: rgb(83, 83, 175);"
+                                    target="_blank" data-bs-toggle="modal" data-bs-target="#facebookShareModal">
                                     <i class="bi bi-facebook text-white" style="font-size: 18px;"></i>
                                 </a>
-                                <a class="btn" onclick="copyUrlInstagram()" style="background: rgb(221, 39, 185);">
+                                <a href="javascript:void(0);" class="btn" style="background: rgb(221, 39, 185);"
+                                    data-bs-toggle="modal" data-bs-target="#instagramShareModal">
                                     <i class="bi bi-instagram text-white" style="font-size: 18px;"></i>
                                 </a>
                             </div>
                         </div>
+
+
+
                         <!-- Input untuk URL artikel -->
                         <input type="text" id="articleUrl" value="{{ $url }}" hidden>
 
                         <script>
-                            function copyUrlInstagram() {
-                                var copyText = document.getElementById("articleUrl");
-                                copyText.select();
-                                copyText.setSelectionRange(0, 99999); // For mobile devices
-                                document.execCommand("copy");
-                                alert("Link berhasil disalin: " + copyText.value);
+                            function copyLink() {
+                                const url = "{{ $url }}";
+                                navigator.clipboard.writeText(url).then(() => {
+
+                                }).catch(err => {
+                                    console.error("Gagal menyalin tautan: ", err);
+                                });
                             }
                         </script>
 
@@ -88,6 +94,13 @@
 
                     </article><!-- End blog entry -->
                 </div><!-- End blog entries list -->
+
+
+                {{-- // modal send whatsap --}}
+
+
+
+
 
                 <div class="col-lg-4">
 
@@ -231,6 +244,67 @@
             </div>
         </section>
     </div>
+
+    <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shareModalLabel">Bagikan atau Salin Tautan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Pilih opsi di bawah ini:</p>
+                    <a href="https://api.whatsapp.com/send?text={{ $url }}" class="btn btn-success "
+                        target="_blank">
+                        Lanjutkan Bagikan ke WhatsApp
+                    </a>
+                    <a href="javascript:void(0);" class="btn btn-secondary" onclick="copyLink()">Salin Tautan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="facebookShareModal" tabindex="-1" aria-labelledby="facebookShareModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="facebookShareModalLabel">Bagikan ke Facebook atau Salin Tautan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Pilih opsi di bawah ini:</p>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" class="btn btn-primary "
+                        target="_blank">
+                        Lanjutkan Bagikan ke Facebook
+                    </a>
+                    <button class="btn btn-secondary" onclick="copyLink()">Salin Tautan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="instagramShareModal" tabindex="-1" aria-labelledby="instagramShareModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="instagramShareModalLabel">Bagikan ke Instagram atau Salin Tautan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Pilih opsi di bawah ini:</p>
+                    <a href="https://www.instagram.com/sharer/sharer.php?u={{ $url }}" class="btn btn-primary "
+                        target="_blank">
+                        Lanjutkan Bagikan ke Instagram
+                    </a>
+                    <button class="btn btn-secondary" onclick="copyLink()">Salin Tautan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script type="text/javascript">
         document.querySelector('.refresh-captcha').addEventListener('click', function() {

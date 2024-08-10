@@ -76,9 +76,10 @@ class SubForumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function index_master_admin($id)
     {
-        //
+        $subforum = SubForum::where('forum_id',$id)->get();
+        return view('admin.sub_forum.index', compact('subforum'));
     }
 
     /**
@@ -121,8 +122,11 @@ class SubForumController extends Controller
      * @param  \App\Models\SubForum  $subForum
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubForum $subForum)
+    public function destroy(SubForum $subForum, $id)
     {
-        //
+        $subForum  = SubForum::find($id);
+        $subForum->delete();
+        toastr()->success('Sukses', 'Berhasil menghapus ');
+        return redirect()->back();
     }
 }

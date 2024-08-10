@@ -316,7 +316,7 @@
                                         @endif
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">{{ Str::limit($post['caption'], 100) }}.</p>
+                                        <p class="card-text">{{ Str::limit($post['caption'], 30) }}.</p>
                                         <a href="{{ $post['permalink'] }}" target="_blank"
                                             class="btn btn-primary gradient-btn">Show Content</a>
                                     </div>
@@ -324,9 +324,10 @@
                             </div>
                         @endforeach
                     </div>
-                    @if (count($posts) > 8)
-                        <button> lihat semua</button>
-                    @endif
+                    {{-- @if (count($posts) > 8)
+                        <a href="/instagram" class="btn btn-primary gradient-btn floar-right" style="width: 150px"> lihat
+                            semua</a>
+                    @endif --}}
                 </div>
             </div>
         </div>

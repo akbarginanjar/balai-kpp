@@ -234,7 +234,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-sm-6 col-md-3">
+            {{-- <div class="col-sm-6 col-md-3">
                 <a href="/master-admin/subscribe" style="text-decoration: none">
                     <div class="card card-stats card-round d-block bg-info-gradient">
                         <div class="card-body">
@@ -253,7 +253,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> --}}
             <div class="col-sm-6 col-md-3">
                 <a href="/master-admin/ebook" style="text-decoration: none">
                     <div class="card card-stats card-round d-block bg-info-gradient">

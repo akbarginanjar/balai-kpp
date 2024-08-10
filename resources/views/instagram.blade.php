@@ -39,7 +39,7 @@
                                 @endif
                             </div>
                             <div class="card-body">
-                                <p class="card-text">{{ Str::limit($post['caption'], 100) }}.</p>
+                                <p class="card-text">{{ Str::limit($post['caption'], 30) }}.</p>
                                 <a href="{{ $post['permalink'] }}" target="_blank"
                                     class="btn btn-primary gradient-btn ">Show Content</a>
                             </div>
