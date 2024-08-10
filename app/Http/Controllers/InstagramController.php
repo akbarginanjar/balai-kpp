@@ -12,19 +12,32 @@ class InstagramController extends Controller
         $accessToken = env('INSTAGRAM_ACCESS_TOKEN');
         $client = new Client();
 
+        // Fetch the user's media
         $response = $client->request('GET', 'https://graph.instagram.com/me/media', [
             'query' => [
-                'fields' => 'id,caption,media_type,media_url,thumbnail_url,permalink',
+                'fields' => 'id,caption,media_type,media_url,thumbnail_url,permalink,children{media_url,media_type}',
                 'access_token' => $accessToken,
             ]
         ]);
 
         $posts = json_decode($response->getBody(), true);
-        // return response()->json($posts);
 
-        // return json_decode($posts);
-        return view('instagram', ['posts' => $posts['data']]);
+        // Process the media data
+        $processedPosts = array_map(function ($post) {
+            // Check if the media is a carousel
+            if ($post['media_type'] === 'CAROUSEL_ALBUM') {
+                $carouselMedia = $post['children']['data'];
+                $post['carousel_media'] = $carouselMedia;
+            } else {
+                $post['carousel_media'] = [];
+            }
+            return $post;
+        }, $posts['data']);
+
+        // Return the processed data as JSON
+        return view('instagram', ['posts' => $processedPosts]);
     }
+
 
     public function create()
     {

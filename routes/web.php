@@ -82,7 +82,7 @@ Route::get('/instagram', [InstagramController::class, 'index']);
 Route::get('/instagram-create', [InstagramController::class, 'create']);
 
 
-Route::get('forum', [ForumController::class, 'forum_index_member']);
+Route::get('forum', [ForumController::class, 'forum_index_member'])->name('forum.filter');;
 Route::post('comment-post', [ForumController::class, 'comment_post']);
 
 
@@ -103,9 +103,14 @@ Route::get('/artikel', function () {
 // Route::get('/lokasi-kantor', function () {
 //     return view('member.top-header.lokasi-kantor');
 // });
+
+Route::post('/search', [PublicController::class, 'welcome']);
+
+
+
 Route::get('/faq', [TbFaqController::class, 'faqIndex']);
 
-Route::get('/', [PublicController::class, 'welcome']);
+Route::get('/', [PublicController::class, 'welcome'])->name('homes');
 Route::get('/m=>{tb_menu:slug}', [PublicController::class, 'menu']);
 Route::get('/s=>{tb_submenu:slug}', [PublicController::class, 'submenu']);
 Route::get('/galeri/{tb_kategori_galeri:slug}', [

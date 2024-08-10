@@ -62,6 +62,7 @@
                                 <th>No</th>
                                 <th>Nama Kegiatan</th>
                                 <th>Waktu Kegiatan</th>
+                                <th>Dokuemntasi</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
@@ -75,6 +76,7 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $item->nama_kegiatan }}</td>
                                     <td>{{ $item->waktu_kegiatan }}</td>
+                                    <td><img src="{{asset('dokumentasi_kegiatan/'.$item->dokumentasi)}}" style="width: 100px"  alt=""></td>
                                     <td> <a href=""
                                             class=" btn-sm {{ $item->status == 0 ? 'btn btn-warning' : 'btn btn-success' }}">{{ $item->status == 0 ? 'Belum Terlaksana' : ' Sudah Terlaksana' }}</a>
                                     </td>

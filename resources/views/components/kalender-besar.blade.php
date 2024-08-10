@@ -1,13 +1,24 @@
 <div>
     @php
         use App\Models\KalenderKegiatan;
-        $kalender = KalenderKegiatan::orderBy('created_at', 'asc')->get();
+    
+        $year_all = KalenderKegiatan::orderBy('created_at', 'asc')->get()->pluck('waktu_kegiatan')
+            ->map(function ($date) {
+                return date('Y', strtotime($date));
+            })->unique()->values();
+        
 
-        if (isset($request->year)) {
-            $year = $request->input('year');
-            $kalender = KalenderKegiatan::whereYear('waktu_kegiatan', $year)->get();
-        }
+        $selected_year = request()->get('year');
+
+      
+        $kalender = KalenderKegiatan::query()
+            ->when($selected_year, function ($query, $year) {
+                return $query->whereYear('waktu_kegiatan', $year);
+            })
+            ->orderBy('created_at', 'asc')
+            ->get();
     @endphp
+
     <style>
         td {
             font-weight: 400;
@@ -29,6 +40,7 @@
             padding: 10px;
         }
     </style>
+
     <section id="recent-blog-posts" class="recent-blog-posts">
         <div class="" data-aos="fade-up">
             <div class="card">
@@ -39,16 +51,15 @@
                         </div>
                         <div class="col-md-4">
                             <div style="font-size: 12px;">Pilih Tahun</div>
-                            <form action="#" method="POST">
+                            <form action="{{ url()->current() }}" method="GET">
                                 <table style="width: 100%">
                                     <tr>
                                         <td>
-                                            @csrf
                                             <select name="year" class="form-select " style="width: 100%">
                                                 <option value="">-- pilih tahun --</option>
-                                                {{-- <option value="2022">2022</option>
-                                                <option value="2023">2023</option> --}}
-                                                <option value="2024">2024</option>
+                                                @foreach ($year_all as $item)
+                                                     <option value="{{ $item }}" {{ $item == $selected_year ? 'selected' : '' }}>{{ $item }}</option>     
+                                                @endforeach
                                             </select>
                                         </td>
                                         <td></td>
@@ -100,10 +111,8 @@
                                                 @endif
                                             </td>
                                         @endfor
-                                        <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('Y-m-d') }}
-                                        </td>
-                                        <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('H:i') }}
-                                        </td>
+                                        <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('Y-m-d') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('H:i') }}</td>
                                         <td>
                                             <div
                                                 class="{{ $item->status == 0 ? 'btn btn-secondary btn-sm' : 'btn btn-primary btn-sm' }}">

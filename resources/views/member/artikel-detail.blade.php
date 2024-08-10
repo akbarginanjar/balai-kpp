@@ -1,6 +1,7 @@
 @extends('layouts.member')
 
 @section('content')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     @php
         use Illuminate\Support\Carbon;
         use App\Models\Tb_artikel;
@@ -256,9 +257,10 @@
                     <p>Pilih opsi di bawah ini:</p>
                     <a href="https://api.whatsapp.com/send?text={{ $url }}" class="btn btn-success "
                         target="_blank">
+                        <i class="bi bi-whatsapp text-white" style="font-size: 18px;"></i>
                         Lanjutkan Bagikan ke WhatsApp
                     </a>
-                    <a href="javascript:void(0);" class="btn btn-secondary" onclick="copyLink()">Salin Tautan</a>
+                    <a href="javascript:void(0);" class="btn btn-secondary" onclick="copyLink()"> <i class="bi bi-copy"></i> Salin Tautan</a>
                 </div>
             </div>
         </div>
@@ -276,9 +278,10 @@
                     <p>Pilih opsi di bawah ini:</p>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" class="btn btn-primary "
                         target="_blank">
+                        <i class="bi bi-facebook text-white" style="font-size: 18px;"></i>
                         Lanjutkan Bagikan ke Facebook
                     </a>
-                    <button class="btn btn-secondary" onclick="copyLink()">Salin Tautan</button>
+                    <button class="btn btn-secondary" onclick="copyLink()"> <i class="bi bi-copy"></i> Salin Tautan</button>
                 </div>
             </div>
         </div>
@@ -296,10 +299,11 @@
                 <div class="modal-body">
                     <p>Pilih opsi di bawah ini:</p>
                     <a href="https://www.instagram.com/sharer/sharer.php?u={{ $url }}" class="btn btn-primary "
-                        target="_blank">
+                        target="_blank"> 
+                        <i class="bi bi-instagram text-white" style="font-size: 18px;"></i>
                         Lanjutkan Bagikan ke Instagram
                     </a>
-                    <button class="btn btn-secondary" onclick="copyLink()">Salin Tautan</button>
+                    <button class="btn btn-secondary" onclick="copyLink()"> <i class="bi bi-copy"></i> Salin Tautan</button>
                 </div>
             </div>
         </div>

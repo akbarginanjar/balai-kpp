@@ -21,7 +21,7 @@ class KalenderKegiatanController extends Controller
     public function getEventDetails($date)
     {
         $events = KalenderKegiatan::whereDate('waktu_kegiatan', $date)->get();
-    
+        
         if ($events->isNotEmpty()) {
             $eventDetails = $events->map(function ($event) {
                 // Bold hanya nama kegiatan, tanpa formatting lain pada deskripsi
@@ -29,9 +29,13 @@ class KalenderKegiatanController extends Controller
                     '<button disabled class="btn btn-success">Terlaksana</button>' : 
                     '<button disabled class="btn btn-secondary">Belum Terlaksana</button>';
     
+                // Path gambar
+                $imageUrl = url('dokumentasi_kegiatan/' . $event->dokumentasi);
+    
                 return '<b>Nama Kegiatan: ' . htmlspecialchars($event->nama_kegiatan) . '</b><br>' . 
                        'Deskripsi Kegiatan: ' . (htmlspecialchars($event->deskripsi) ?? 'No description available.') . 
-                       '<br><br>' . $status . 
+                       '<br><br>' . $status . '<br>' . 
+                       '<br><img src="' . $imageUrl . '" alt="Dokumentasi" style="max-width: 100%; border-radius:20px; height: auto;">' .
                        '<hr>';
             })->join(''); // Menggabungkan hasil dengan <hr> sebagai pemisah
     
@@ -44,6 +48,7 @@ class KalenderKegiatanController extends Controller
             ]);
         }
     }
+    
     
     
     
@@ -71,6 +76,12 @@ class KalenderKegiatanController extends Controller
         $kegiatan->deskripsi = $request->deskripsi;
         $kegiatan->waktu_kegiatan = $request->waktu_kegiatan;
         $kegiatan->status = '0';
+        if ($request->hasFile('dokumentasi')) {
+            $image = $request->dokumentasi;
+            $name = rand(1000, 9999) . $image->getClientOriginalName();
+            $image->move('dokumentasi_kegiatan', $name);
+            $kegiatan->dokumentasi = $name;
+        }
         $kegiatan->save();
         toastr()->success('Success', 'Berhasil Menambah Kegiatan');
         return redirect('master-admin/kalender-kegiatan');

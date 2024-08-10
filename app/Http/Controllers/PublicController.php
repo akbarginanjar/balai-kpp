@@ -25,7 +25,7 @@ use GuzzleHttp\Client;
 
 class PublicController extends Controller
 {
-    public function welcome()
+    public function welcome(Request $request)
     {
         $accessToken = env('INSTAGRAM_ACCESS_TOKEN');
         $client = new \GuzzleHttp\Client();
@@ -46,19 +46,37 @@ class PublicController extends Controller
     
         $slide = Tb_slide::all();
         
-        // Assuming you want to store the IP address, browser, device, and platform dynamically
+        // Store visitor details
         $visitor = Tb_visitor::create([
-            'ip_address' => request()->ip(),
-            'browser' => request()->header('User-Agent'), // This is a simplification; you might want a library to parse this
+            'ip_address' => $request->ip(),
+            'browser' => $request->header('User-Agent'),
             'device' => '-',
             'platform' => '-',
         ]);
         $visitor->save();
     
         $visitors = Tb_visitor::count();
-    
-        return view('welcome', compact('slide', 'visitors'))->with('posts', $posts['data']);
+
+        $year_all = KalenderKegiatan::orderBy('created_at', 'asc')->get()->pluck('waktu_kegiatan')
+        ->map(function ($date) {
+            return date('Y', strtotime($date));
+        })->unique()->values();
+     
+        $check_scrol = false;
+
+         if (isset($request->year)) {
+            $kalender = KalenderKegiatan::whereYear('waktu_kegiatan', $request->year)->paginate(7);
+            $collect = $kalender->isEmpty() ? [] : $kalender;
+            $check_scrol = true;
+        } else {
+            $collect = KalenderKegiatan::orderBy('created_at', 'asc')->paginate(7);
+            $check_scrol = false;
+        }
+        
+        return view('welcome', compact('slide', 'visitors', 'collect', 'check_scrol','year_all'))->with('posts', $posts['data']);
+        
     }
+    
     
 
     public function menu(Tb_menu $tb_menu)
@@ -69,17 +87,13 @@ class PublicController extends Controller
         return view('member.menu', compact('menu', 'slide', 'kategoriGaleri'));
     }
 
-    public function submenu(Tb_submenu $tb_submenu, Request $request)
+    public function submenu(Tb_submenu $tb_submenu)
     {
         $submenu = Tb_submenu::find($tb_submenu->id);
         $slide = Tb_slide::all();
         $kategoriGaleri = Tb_kategori_galeri::all();
         $kalender = KalenderKegiatan::orderBy('created_at', 'asc')->get();
 
-        if(isset($request->year)){
-            $year = $request->input('year');
-            $kalender = KalenderKegiatan::whereYear('waktu_kegiatan', $year)->get();
-        }
         
         return view(
             'member.submenu',

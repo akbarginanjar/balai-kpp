@@ -6,6 +6,8 @@
         integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
         crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.2/dist/css/select2.min.css" rel="stylesheet" />
 @endsection
 
 
@@ -180,23 +182,32 @@
 
         .whatsapp-float {
             position: fixed;
-            width: 50px;
-            height: 50px;
-            bottom: 70px;
+            bottom: 80px;
+            /* Adjust as needed */
             right: 20px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
+            /* Adjust as needed */
             z-index: 100;
         }
 
         .whatsapp-icon {
-            width: 100%;
-            height: 100%;
+            background-color: #25D366;
+            /* Green color for WhatsApp */
+            width: 60px;
+            /* Set width and height to the same value */
+            height: 60px;
+            /* Set width and height to the same value */
             border-radius: 50%;
+            /* Circular background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .whatsapp-icon i {
+            color: white;
+            /* Color of the WhatsApp icon */
+            font-size: 24px;
+            /* Adjust icon size as needed */
         }
     </style>
     @php
@@ -303,12 +314,12 @@
                     <h5 class="text-center text--primary mb-4 mt-5">Konten Instagram</h5>
                     <div class="row">
                         @foreach ($posts as $index => $post)
-                            <div class="col-md-3 mb-3 post-item {{ $index >= 8 ? 'd-none' : '' }}">
-                                <div class="card shadow border-0" style="border-radius: 20px">
+                            <div class="col-md-4 mb-3 post-item {{ $index >= 3 ? 'd-none' : '' }}">
+                                <div class="card shadow border-0" style="border-radius: 20px; height: 450px;">
                                     <div class="card-body">
                                         @if ($post['media_type'] === 'IMAGE')
                                             <img src="{{ $post['media_url'] }}" class="card-img-top"
-                                                style="border-radius: 10px; height: 300px;">
+                                                style="border-radius: 10px; height: 300px; object-fit: cover">
                                         @elseif ($post['media_type'] === 'VIDEO')
                                             <video controls style="width: 100%; height: 300px;">
                                                 <source src="{{ $post['media_url'] }}" type="video/mp4">
@@ -316,7 +327,7 @@
                                         @endif
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">{{ Str::limit($post['caption'], 30) }}.</p>
+                                        <p class="card-text">{{ Str::limit($post['caption'], 27) }}.</p>
                                         <a href="{{ $post['permalink'] }}" target="_blank"
                                             class="btn btn-primary gradient-btn">Show Content</a>
                                     </div>
@@ -324,10 +335,11 @@
                             </div>
                         @endforeach
                     </div>
-                    {{-- @if (count($posts) > 8)
-                        <a href="/instagram" class="btn btn-primary gradient-btn floar-right" style="width: 150px"> lihat
+                    @if (count($posts) > 3)
+                        <a href="/instagram" class="btn btn-primary gradient-btn floar-right mt-5" style="width: 150px">
+                            lihat
                             semua</a>
-                    @endif --}}
+                    @endif
                 </div>
             </div>
         </div>
@@ -363,20 +375,25 @@
                             </div>
                             <div class="col-md-4">
                                 <div style="font-size: 12px;">Pilih Tahun</div>
-                                <form action="#" method="POST">
+                                <form id="searchForm" method="POST" action="{{ url('/search') }}">
+                                    @csrf
                                     <table style="width: 100%">
                                         <tr>
                                             <td>
                                                 @csrf
-                                                <select name="year" class="form-select " style="width: 100%">
+                                                <select id="yearSelect" name="year" class="form-select"
+                                                    style="width: 100%">
                                                     <option value="">-- pilih tahun --</option>
-                                                    {{-- <option value="2022">2022</option>
-                                                    <option value="2023">2023</option> --}}
-                                                    <option value="2024">2024</option>
+                                                    @foreach ($year_all as $item)
+                                                        <option value="{{ $item }}">{{ $item }}</option>
+                                                    @endforeach
+                                                    <!-- Add other years as needed -->
                                                 </select>
                                             </td>
                                             <td></td>
-                                            <td><button type="submit" class="btn btn-primary btn-sm">Cari</button></td>
+                                            <td>
+                                                <button type="submit" class="btn btn-primary btn-sm">Cari</button>
+                                            </td>
                                         </tr>
                                     </table>
                                 </form>
@@ -410,7 +427,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($kalender as $item)
+
+                                    @foreach ($collect as $item)
                                         @php
                                             $bulan = \Carbon\Carbon::parse($item->waktu_kegiatan)->format('n'); // Mendapatkan bulan (1-12)
                                             $tanggal = \Carbon\Carbon::parse($item->waktu_kegiatan)->format('d'); // Mendapatkan tanggal (01-31)
@@ -424,10 +442,8 @@
                                                     @endif
                                                 </td>
                                             @endfor
-                                            <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('Y-m-d') }}
-                                            </td>
-                                            <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('H:i') }}
-                                            </td>
+                                            <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('Y-m-d') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->waktu_kegiatan)->format('H:i') }}</td>
                                             <td>
                                                 <div
                                                     class="{{ $item->status == 0 ? 'btn btn-secondary btn-sm' : 'btn btn-primary btn-sm' }}">
@@ -436,8 +452,12 @@
                                             </td>
                                         </tr>
                                     @endforeach
+
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="pagination">
+                            {{ $collect->links() }}
                         </div>
                     </div>
                 </div>
@@ -471,10 +491,46 @@
 
         <a href="https://wa.me/{{ $setting->call_us }}" class="whatsapp-float" target="_blank">
             <div class="whatsapp-icon">
-                <i class="bi bi-whatsapp"></i>
+                <i class="bi bi-whatsapp text-center"></i>
             </div>
         </a>
 
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Simpan posisi scroll saat klik pagination
+                var savedScrollPosition = localStorage.getItem('scrollPosition');
+                if (savedScrollPosition) {
+                    window.scrollTo(0, savedScrollPosition);
+                    localStorage.removeItem('scrollPosition');
+                }
+
+                // Tangkap klik pada link pagination
+                document.querySelectorAll('.pagination a').forEach(function(link) {
+                    link.addEventListener('click', function(event) {
+                        // Simpan posisi scroll saat klik pagination
+                        localStorage.setItem('scrollPosition', window.scrollY);
+                    });
+                });
+            });
+        </script>
+
+        @if ($check_scrol == true)
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var savedScrollPosition = localStorage.getItem('scrollPosition');
+                    if (savedScrollPosition) {
+                        window.scrollTo(0, savedScrollPosition);
+                        localStorage.removeItem('scrollPosition');
+                    }
+                });
+
+                window.addEventListener('beforeunload', function() {
+                    localStorage.setItem('scrollPosition', window.scrollY);
+                });
+            </script>
+        @endif
         <script>
             function scrollGalleryLeft() {
                 document.getElementById('galleryContainer').scrollBy({

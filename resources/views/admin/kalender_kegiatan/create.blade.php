@@ -66,6 +66,11 @@
                             placeholder="Masukan Nama Kegiatan" name="" id="">
                     </div>
                     <div class="form-group">
+                        <label for="">Dokumentasi</label>
+                        <input type="file" name="dokumentasi" required class="form-control"
+                            placeholder="upload Image"  id="">
+                    </div>
+                    <div class="form-group">
                         <label for=""> Deskripsi</label>
                         <textarea name="deskripsi" id="" class="form-control" required cols="30" rows="10"></textarea>
                     </div>

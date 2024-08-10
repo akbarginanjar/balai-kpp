@@ -6,6 +6,7 @@ use App\Models\Forum;
 use App\Rules\NoProfanity;
 use Illuminate\Http\Request;
 use App\Models\SubForum;
+use Illuminate\Support\Facades\DB;
 
 class ForumController extends Controller
 {
@@ -15,14 +16,42 @@ class ForumController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public  function forum_index_member(){
-        $forum = Forum::orderBy('created_at','asc')->get();
-        $subForum = SubForum::orderBy('created_at','asc')->get();
-        $check_forum_status =  Forum::orderBy('created_at','asc')->where('publish', 1)->count();
-        return view('forum', compact('forum','check_forum_status','subForum'));
+     public function forum_index_member(Request $request)
+     {
+         $query = Forum::orderBy('created_at', 'asc');
+         
+         $subjectFilter = $request->input('subject');
+         
+         if ($subjectFilter) {
+             $query->where('subject', $subjectFilter);
+         }
+         
+         if ($request->filled('start_date') && $request->filled('end_date')) {
+             $query->whereBetween('created_at', [$request->input('start_date'), $request->input('end_date')]);
+         }
+         
+         if ($request->filled('year')) {
+             $query->whereYear('created_at', $request->input('year'));
+         }
+         
+         if (!$subjectFilter && !$request->filled('start_date') && !$request->filled('end_date') && !$request->filled('year')) {
+             $forum = Forum::orderBy('created_at', 'desc')->paginate(10);
+             $isPaginated = true;
+         } else {
+             $forum = $query->get(); 
+             $isPaginated = false;
+         }
+         $subForum = SubForum::orderBy('created_at', 'asc')->get();
+         $subForumCount = SubForum::select('forum_id', DB::raw('count(*) as count'))
+             ->groupBy('forum_id')
+             ->pluck('count', 'forum_id');
+         $check_forum_status = Forum::where('publish', 1)->count();
+         
+         return view('forum', compact('forum', 'check_forum_status', 'subForum', 'subForumCount','isPaginated'));
      }
+     
 
-     public function comment_post(Request $request)
+    public function comment_post(Request $request)
     {
         $request->validate([
             'name' => ['required'],
@@ -51,12 +80,12 @@ class ForumController extends Controller
             toastr()->warning('Warning', 'atribut berisi bahasa yang tidak pantas.');
             return redirect()->back()->withInput();
         }
-        if(strlen($request->subject) > 100){
+        if (strlen($request->subject) > 100) {
             toastr()->warning('Warning', 'maksimal subject 100');
             return redirect()->back()->withInput();
         }
 
-        
+
         // Save the forum comment
         $forum = new Forum();
         $forum->name = $request->name;
@@ -71,20 +100,21 @@ class ForumController extends Controller
         return redirect()->back();
     }
 
-    
+
     public function index_master_admin()
     {
-        $forum = Forum::orderBy('created_at','asc')->get();
+        $forum = Forum::orderBy('created_at', 'asc')->get();
         return view('admin.forum.index', compact('forum'));
     }
-    public function publish($id){
+    public function publish($id)
+    {
         $forum = Forum::find($id);
-        if($forum->publish == 0){
+        if ($forum->publish == 0) {
             $forum->publish = 1;
             $forum->save();
             toastr()->success('Success', 'berhasil di publish');
             return redirect()->back();
-        }else if($forum->publish == 1){
+        } else if ($forum->publish == 1) {
             $forum->publish = 0;
             $forum->save();
             toastr()->success('Success', 'Berhasil Non Publish');
@@ -99,7 +129,6 @@ class ForumController extends Controller
      */
     public function create()
     {
-       
     }
 
     /**
@@ -157,27 +186,26 @@ class ForumController extends Controller
     {
         // Temukan forum berdasarkan ID
         $forum = Forum::find($id);
-        
+
         // Cek jika forum ditemukan
         if ($forum) {
             // Periksa apakah ada record anak di SubForum yang terkait dengan forum ini
             $subForums = SubForum::where('forum_id', $id)->get();
-            
+
             if ($subForums->count() > 0) {
                 // Hapus semua record anak terlebih dahulu
                 foreach ($subForums as $subForum) {
                     $subForum->delete();
                 }
             }
-            
+
             // Hapus forum setelah record anak dihapus
             $forum->delete();
             toastr()->success('Sukses', 'Berhasil menghapus Forum');
         } else {
             toastr()->error('Gagal', 'Forum tidak ditemukan');
         }
-        
+
         return redirect()->back();
     }
-    
 }

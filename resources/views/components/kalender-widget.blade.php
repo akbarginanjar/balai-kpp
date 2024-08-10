@@ -37,8 +37,8 @@
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        width: 400px;
+        padding: 10px;
+        width: 350px; /* Adjust width */
     }
 
     .header {
@@ -50,14 +50,15 @@
     #calendarTable {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 10px;
+        margin-top: 5px; /* Reduce margin */
     }
 
     #calendarTable th,
     #calendarTable td {
         border: 1px solid #ddd;
         text-align: center;
-        padding: 10px;
+        padding: 5px; /* Reduce padding */
+        font-size: 12px; /* Smaller font size */
     }
 
     #calendarTable th {
@@ -65,19 +66,19 @@
     }
 
     #calendarTable td {
-        height: 50px;
+        height: 40px; /* Reduce cell height */
     }
 
     button {
         background-color: #4CAF50;
         border: none;
         color: white;
-        padding: 10px;
+        padding: 5px; /* Reduce button padding */
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 14px;
-        border-radius: 5px;
+        font-size: 12px; /* Smaller font size */
+        border-radius: 4px; /* Adjust border radius */
         cursor: pointer;
     }
 
@@ -85,6 +86,7 @@
         background-color: #45a049;
     }
 </style>
+
 <style>
     .modal {
         display: none;
